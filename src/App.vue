@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    hello world
+    <Nav></Nav>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import Nav from './components/nav/Nav.vue';
 
-@Component
+@Component({
+  components: {
+    Nav,
+  },
+})
 export default class App extends Vue {}
 </script>
 
