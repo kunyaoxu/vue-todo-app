@@ -11,8 +11,18 @@ export interface ITodo {
 
 const todoList: ITodo[] = [
   {
-    id: 'qweqwe789789',
+    id: 'qweqwe789',
     text: 'i am inital todo',
+    isFinished: false,
+  },
+  {
+    id: 'qweqwe78910',
+    text: 'i am inital todo 2',
+    isFinished: true,
+  },
+  {
+    id: 'qweqwe78911',
+    text: 'i am inital todo 3',
     isFinished: false,
   },
 ];
@@ -20,6 +30,7 @@ const todoList: ITodo[] = [
 export default new Vuex.Store({
   state: {
     navState: '0',
+    isOpenNewTodo: false,
     todoList,
   },
   mutations: {
@@ -32,6 +43,12 @@ export default new Vuex.Store({
           el.isFinished = !el.isFinished;
         }
       });
+    },
+    onOpenNewTodo(state) {
+      state.isOpenNewTodo = true;
+    },
+    onCloseNewTodo(state) {
+      state.isOpenNewTodo = false;
     },
   },
   actions: {
