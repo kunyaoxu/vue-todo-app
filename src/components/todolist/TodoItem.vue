@@ -5,16 +5,16 @@
 
   @Component
   export default class extends Vue {
+    @Prop()
+    public todo!: ITodo;
+
+    @Mutation
+    public onChangeFinished!: (id: string) => void;
+
     public constructor(arg: any) {
       super(arg);
       this.onChangeFinished = this.onChangeFinished.bind(this, this.todo.id);
     }
-
-    @Prop()
-    private todo!: ITodo;
-
-    @Mutation
-    private onChangeFinished!: (id: string) => void;
 
     public render() {
       return (
