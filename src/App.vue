@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Nav></Nav>
+    <TodoList/>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import Nav from './components/nav/Nav.vue';
+import TodoList from './components/todolist/TodoList.vue';
 
 @Component({
   components: {
     Nav,
+    TodoList,
   },
 })
 export default class App extends Vue {}
