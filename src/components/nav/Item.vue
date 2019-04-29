@@ -20,10 +20,10 @@ export default class Item extends Vue {
   @State('navState')
   private navState!: string;
 
-  @Mutation('setNavState') setNavState: any;
+  @Mutation('setNavState')
+  private setNavState!: (str: string) => {};
 
   public render() {
-    console.log(this.navState)
     return (
       <label class='item_container'>
         <input
