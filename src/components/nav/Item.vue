@@ -52,6 +52,7 @@ export default class Item extends Vue {
       margin: auto;
     }
     .hidden_radio {
+      cursor: pointer;
       left: 0;
       top: 0;
       margin: 0;
