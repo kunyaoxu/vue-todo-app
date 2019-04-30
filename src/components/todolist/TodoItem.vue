@@ -31,6 +31,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .TodoItem {
-    margin-bottom: 32px;
+    margin: 16px 0;
   }
 </style>
