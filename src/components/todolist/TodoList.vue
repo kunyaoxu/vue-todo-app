@@ -14,19 +14,21 @@
     @State
     public navState!: string;
 
-    public getTodoToShow(): ITodo[] {
+    public getTodoToShow() {
       switch (this.navState) {
         case '0':
-          return this.todoList;
+          return this.todoList.map((todo, index) => {
+            return <TodoItem key={index} props={{todo}}/>;
+          });
           break;
         case '1':
-          return this.todoList.filter((todo) => {
-            return !todo.isFinished;
+          return this.todoList.map((todo, index) => {
+            return todo.isFinished ? null : <TodoItem key={index} props={{todo}}/>;
           });
           break;
         case '2':
-          return this.todoList.filter((todo) => {
-            return todo.isFinished;
+          return this.todoList.map((todo, index) => {
+            return !todo.isFinished ? null : <TodoItem key={index} props={{todo}}/>;
           });
           break;
         default:
@@ -35,13 +37,10 @@
     }
 
     public render() {
-      // console.log(this.getTodoToShow());
       return (
         <div class='todo_list'>
           <Dashboard/>
-          {this.getTodoToShow().map((todo) => {
-            return <TodoItem props={{todo}}/>;
-          })}
+          {this.getTodoToShow()}
         </div>
       );
     }
