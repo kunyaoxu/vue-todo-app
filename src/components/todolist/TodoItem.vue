@@ -17,7 +17,6 @@
     }
 
     public render() {
-      console.log(this.todo.id)
       return (
         <div class='TodoItem'>
           <input type='checkbox' checked={this.todo.isFinished} onClick={this.onChangeFinished}/>
@@ -31,6 +30,6 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .TodoItem {
-    margin-bottom: 32px;
+    margin: 16px 0;
   }
 </style>
