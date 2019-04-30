@@ -4,8 +4,8 @@ import Item from './Item.vue';
 
 @Component
 export default class Nav extends Vue {
-  private itemName: string = 'nav';
-  private selected: string = '0';
+  public itemName: string = 'nav';
+
   public render() {
     return (
       <div class='nav_container'>
