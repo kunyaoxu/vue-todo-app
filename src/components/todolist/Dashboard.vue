@@ -1,23 +1,25 @@
 <script lang="tsx">
   import { Component, Prop, Vue } from 'vue-property-decorator';
-  import TodoItem from './TodoItem.vue';
-  import Dashboard from './Dashboard.vue';
   import { State, Action, Mutation } from 'vuex-class';
-
   import { ITodo } from '@/store';
 
   @Component
   export default class extends Vue {
-    @State('todoList')
-    private todoList!: ITodo[];
+    @State
+    public todoList!: ITodo[];
 
     public render() {
+      const count = this.todoList.reduce((acc, cur ) => {
+        if(cur.isFinished === false) {
+          return acc + 1;
+        }
+        return acc;
+      }, 0);
+
       return (
-        <div class='todo_list'>
-          <Dashboard/>
-          {this.todoList.map((todo) => {
-            return <TodoItem props={{todo}}/>;
-          })}
+        <div class='dashboard'>
+          <span>{count}</span>
+          <div>&nbsp;in progress</div>
         </div>
       );
     }
@@ -26,9 +28,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  .todo_list {
-    margin: 0 auto;
-    padding: 0 16px;
-    max-width: 576px;
+  .dashboard {
+    display: flex;
+    justify-content: flex-end;
+    margin: 8px auto;
   }
 </style>
