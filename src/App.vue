@@ -2,6 +2,7 @@
   <div id="app">
     <Nav></Nav>
     <TodoList/>
+    <OkBtn/>
     <NewTodoToggleBtn/>
   </div>
 </template>
@@ -12,12 +13,14 @@ import { Component, Vue } from 'vue-property-decorator';
 import Nav from './components/nav/Nav.vue';
 import TodoList from './components/todolist/TodoList.vue';
 import NewTodoToggleBtn from './components/buttons/NewTodoToggleBtn.vue';
+import OkBtn from './components/buttons/OkBtn.vue';
 
 @Component({
   components: {
     Nav,
     TodoList,
     NewTodoToggleBtn,
+    OkBtn,
   },
 })
 export default class App extends Vue {}
