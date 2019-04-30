@@ -2,6 +2,7 @@
   <div id="app">
     <Nav></Nav>
     <TodoList/>
+    <EditForm/>
     <OkBtn/>
     <NewTodoToggleBtn/>
   </div>
@@ -12,6 +13,7 @@ import '@/css/button.scss';
 import { Component, Vue } from 'vue-property-decorator';
 import Nav from './components/nav/Nav.vue';
 import TodoList from './components/todolist/TodoList.vue';
+import EditForm from './components/editform/EditForm.vue';
 import NewTodoToggleBtn from './components/buttons/NewTodoToggleBtn.vue';
 import OkBtn from './components/buttons/OkBtn.vue';
 
@@ -19,6 +21,7 @@ import OkBtn from './components/buttons/OkBtn.vue';
   components: {
     Nav,
     TodoList,
+    EditForm,
     NewTodoToggleBtn,
     OkBtn,
   },
