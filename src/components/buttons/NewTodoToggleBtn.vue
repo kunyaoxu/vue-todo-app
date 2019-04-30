@@ -27,15 +27,11 @@
 
 <style scoped lang="scss">
   .btn-add {
-    &:hover {
-      filter: grayscale(20%);
-    }
     &.rotate {
       transform: translateX(calc(-50% + 75px)) rotate(45deg);
     }
     transition: .3s transform;
     position: fixed;
-    border: 0;
     background-color: red;
     cursor: pointer;
     width: 50px;

@@ -7,6 +7,7 @@
 </template>
 
 <script lang="ts">
+import '@/css/button.scss';
 import { Component, Vue } from 'vue-property-decorator';
 import Nav from './components/nav/Nav.vue';
 import TodoList from './components/todolist/TodoList.vue';
