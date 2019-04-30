@@ -9,13 +9,37 @@
   @Component
   export default class extends Vue {
     @State('todoList')
-    private todoList!: ITodo[];
+    public todoList!: ITodo[];
+
+    @State
+    public navState!: string;
+
+    public getTodoToShow(): ITodo[] {
+      switch (this.navState) {
+        case '0':
+          return this.todoList;
+          break;
+        case '1':
+          return this.todoList.filter((todo) => {
+            return !todo.isFinished;
+          });
+          break;
+        case '2':
+          return this.todoList.filter((todo) => {
+            return todo.isFinished;
+          });
+          break;
+        default:
+          return this.todoList;
+      }
+    }
 
     public render() {
+      // console.log(this.getTodoToShow());
       return (
         <div class='todo_list'>
           <Dashboard/>
-          {this.todoList.map((todo) => {
+          {this.getTodoToShow().map((todo) => {
             return <TodoItem props={{todo}}/>;
           })}
         </div>
