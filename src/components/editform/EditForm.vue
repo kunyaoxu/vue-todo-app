@@ -1,17 +1,36 @@
 <script lang="tsx">
   import { Component, Prop, Vue } from 'vue-property-decorator';
   import { State, Action, Mutation } from 'vuex-class';
+  import { ITodo } from '../../store';
 
   @Component
   export default class extends Vue {
     @State
     public isOpenNewTodo!: boolean;
 
+    @State
+    public currentEditTodo!: ITodo;
+
+    @Mutation
+    public onChangeContent!: (newValue: string) => void;
+
+    public onInput(e: Event) {
+      if (null !== e.target) {
+        const target = e.target as HTMLTextAreaElement;
+        this.onChangeContent(target.value);
+      }
+    }
+
     public render() {
       return this.isOpenNewTodo ? (
         <div class='editform-outer'>
           <div class='editform'>
-            <textarea class='editform-content' placeholder='write something'/>
+            <textarea
+              value={this.currentEditTodo.text}
+              class='editform-content'
+              placeholder='write something'
+              onInput={this.onInput}
+            />
           </div>
         </div>
       ) :

@@ -7,12 +7,15 @@
     @State
     public isOpenNewTodo!: boolean;
 
+    @Mutation
+    public onSaveTodo!: () => void;
+
     public render() {
       const move = this.isOpenNewTodo ? 'move' : '';
       return (
         <button
           class={`btn-ok ${move}`}
-          onClick={() => alert('btn-ok clicked')}
+          onClick={this.onSaveTodo}
         >&#x2713;</button>
       );
     }
