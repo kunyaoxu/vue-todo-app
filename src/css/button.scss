@@ -2,5 +2,7 @@ button {
   &:hover {
     filter: grayscale(20%);
   }
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
   border: 0;
 }
