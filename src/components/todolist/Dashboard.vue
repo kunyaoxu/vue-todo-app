@@ -10,7 +10,7 @@
 
     public render() {
       const count = this.todoList.reduce((acc, cur ) => {
-        if(cur.isFinished === false) {
+        if (cur.isFinished === false) {
           return acc + 1;
         }
         return acc;
