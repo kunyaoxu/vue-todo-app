@@ -18,18 +18,13 @@ const currentEditTodo: ITodo = {
 const todoList: ITodo[] = [
   {
     id: 'qweqwe789',
-    text: 'i am inital todo',
+    text: 'i am todo 1',
     isFinished: false,
   },
   {
     id: 'qweqwe78910',
-    text: 'i am inital todo 2',
+    text: 'i am todo 2',
     isFinished: true,
-  },
-  {
-    id: 'qweqwe78911',
-    text: 'i am inital todo 3',
-    isFinished: false,
   },
 ];
 
